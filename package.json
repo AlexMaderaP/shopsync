@@ -1,0 +1,15 @@
+{
+  "name": "shopsync",
+  "version": "1.0.0",
+  "description": "eCommerce application built with MERN",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server.js"
+  },
+  "author": "Alejandro Madera",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
