@@ -1,4 +1,4 @@
-import Order from "../models/productModel.js";
+import Order from "../models/orderModel.js";
 import asyncHandler from "../middleware/asyncHandler.js";
 
 // @desc    Create new order
@@ -20,11 +20,13 @@ const addOrderItems = asyncHandler(async (req, res) => {
     throw new Error("No order items");
   } else {
     const order = new Order({
-      orderItems: orderItems.map((order) => ({
-        ...order,
-        product: order._id,
-        _id: undefined,
-      })),
+      orderItems: orderItems.map((x) => {
+        return {
+          ...x,
+          product: x._id,
+          _id: undefined,
+        };
+      }),
       user: req.user._id,
       shippingAddress,
       paymentMethod,

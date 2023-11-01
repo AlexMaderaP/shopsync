@@ -16,7 +16,7 @@ const PaymentScreen = () => {
   const { shippingAddress } = cart;
 
   useEffect(() => {
-    if (JSON.stringify(shippingAddress) === "{}") {
+    if (!shippingAddress.address) {
       navigate("/shipping");
     }
   }, [shippingAddress, navigate]);
