@@ -6,6 +6,7 @@ import Message from "../components/Message";
 import Paginate from "../components/Paginate";
 import ProductsCarousel from "../components/ProductsCarousel";
 import { useGetProductsQuery } from "../slices/productsApiSlice";
+import Meta from "../components/Meta";
 
 const HomeScreen = () => {
   const { pageNumber, keyword } = useParams();
@@ -31,6 +32,7 @@ const HomeScreen = () => {
         </Message>
       ) : (
         <>
+          <Meta />
           <h1>Latest Products</h1>
           <Row>
             {data.products.map((product) => (
