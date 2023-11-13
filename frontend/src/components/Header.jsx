@@ -4,6 +4,7 @@ import { FaShoppingCart, FaUser } from "react-icons/fa";
 import { LinkContainer } from "react-router-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import { useLogoutMutation } from "../slices/usersApiSlice";
+import { resetCart } from "../slices/cartSlice";
 import { logout } from "../slices/authSlice";
 import SearchBox from "./SearchBox";
 
@@ -21,6 +22,7 @@ const Header = () => {
   const logoutHandler = async () => {
     try {
       await logoutApiCall().unwrap();
+      dispatch(resetCart());
       dispatch(logout());
       navigate("/login");
     } catch (err) {

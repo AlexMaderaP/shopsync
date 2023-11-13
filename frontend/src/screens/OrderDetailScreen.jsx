@@ -110,7 +110,7 @@ const OrderDetailScreen = () => {
   return isLoading ? (
     <Loader />
   ) : error ? (
-    <Message variant="danger">{error.data.message}</Message>
+    <Message variant="danger">{error?.data?.message || error.error}</Message>
   ) : (
     <>
       <h1>Order {order._id}</h1>
@@ -166,7 +166,8 @@ const OrderDetailScreen = () => {
                       <Link to={`/products/${item.product}`}>{item.name}</Link>
                     </Col>
                     <Col md={4} xs={4}>
-                      {item.qty} x ${item.price} = {item.qty * item.price}
+                      {item.qty} x ${item.price} = ${" "}
+                      {(item.qty * (item.price * 100)) / 100}
                     </Col>
                   </Row>
                 </ListGroup.Item>

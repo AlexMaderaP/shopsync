@@ -65,7 +65,7 @@ const ShippingScreen = () => {
           <Form.Label>Country</Form.Label>
           <Form.Control
             type="text"
-            placeholder="Enter postal code"
+            placeholder="Enter country"
             value={country}
             onChange={(e) => setCountry(e.target.value)}
           ></Form.Control>
