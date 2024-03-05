@@ -65,7 +65,7 @@ You can use the scripts:
 You can check the users the script will create by going to `./backend/data/users.js`
 The same way you can check and modify the products that will be created by the script in `./backend/data/users.js`
 
-## Explain Cart Functionality
+## Cart Functionality
 
 - You can add as many items as you want.
 - You cannot proceed to checkout if you have no items in your cart.
